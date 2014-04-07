@@ -1,0 +1,15 @@
+name = "worker"
+version = '1.4'
+
+homepage = 'https://vscentrum.be/neutral/documentation/cluster-doc/running-jobs/worker-framework'
+description = """The Worker framework has been developed to help deal with parameter exploration experiments that would otherwise result in many jobs, forcing the user resort to scripting to retain her sanity."""
+
+toolchain = {'name': 'intel', 'version': '2014a'}
+
+sources = [SOURCE_TAR_GZ]
+
+dependencies = [
+    ('Perl', '5.18.2', '-bare')
+]
+
+moduleclass = 'tools'
