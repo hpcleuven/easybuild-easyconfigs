@@ -12,7 +12,7 @@ toolchain = {'name': 'dummy', 'version': 'dummy'}
 sources = ['l_mkl_%(version)s.tgz']
 
 # deps for interface build
-compver = '2013_sp1.1.106'
+compver = '2013.5.192'
 dependencies = [
     ('icc', compver),
     ('ifort', compver),
