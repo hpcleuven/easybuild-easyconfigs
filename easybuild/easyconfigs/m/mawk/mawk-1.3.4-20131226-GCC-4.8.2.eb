@@ -1,0 +1,17 @@
+name = 'mawk'
+version = '1.3.4-20131226'
+
+homepage = 'http://invisible-island.net/mawk/mawk.html'
+description = """mawk is an interpreter for the AWK Programming Language."""
+
+toolchain = {'name': 'GCC', 'version': '4.8.2'}
+
+sources = [SOURCELOWER_TGZ]
+source_urls = ['ftp://invisible-island.net/mawk']
+
+sanity_check_paths = {
+    'files': ['bin/mawk'],
+    'dirs': ["bin"]
+}
+
+moduleclass = 'tools'
