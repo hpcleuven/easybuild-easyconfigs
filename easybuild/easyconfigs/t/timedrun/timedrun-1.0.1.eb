@@ -1,0 +1,16 @@
+name = "timedrun"
+version = '1.0.1'
+
+homepage = 'https://vscentrum.be/neutral/documentation/cluster-doc/running-jobs/worker-framework'
+description = """Run a shell command for at most a specified period of time"""
+
+toolchain = {'name': 'dummy', 'version': ''}
+
+sources = [SOURCE_TAR_GZ]
+
+sanity_check_paths = {
+    'dirs': ['bin'],
+    'files': ['bin/timedrun'],
+}
+
+moduleclass = 'tools'

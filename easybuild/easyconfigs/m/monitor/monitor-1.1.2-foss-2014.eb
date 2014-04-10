@@ -1,0 +1,20 @@
+name = "monitor"
+version = '1.1.2'
+
+homepage = 'https://vscentrum.be/neutral/documentation/cluster-doc/running-jobs/copy_of_monitoring-memory-and-cpu-usage-of-programs'
+description = """monitor logs cpu and memory usage of a running application"""
+
+toolchain = {'name': 'foss', 'version': '2014a'}
+
+sources = [SOURCE_TAR_GZ]
+
+dependencies = [
+    ('Perl', '5.18.2', '-bare'),
+]
+
+sanity_check_paths = {
+    'dirs': ['bin'],
+    'files': ['bin/monitor'],
+}
+
+moduleclass = 'tools'
