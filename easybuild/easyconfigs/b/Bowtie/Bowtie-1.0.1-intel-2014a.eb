@@ -1,0 +1,15 @@
+name = 'Bowtie'
+version = '1.0.1'
+
+homepage = 'http://bowtie-bio.sourceforge.net/index.shtml'
+description = """Bowtie is an ultrafast, memory-efficient short read aligner.
+It aligns short DNA sequences (reads) to the human genome.
+"""
+
+toolchain = {'name': 'intel', 'version': '2014a'}
+toolchainopts = {'optarch': True, 'pic': True}
+
+sources = [SOURCE_TAR_GZ]
+patches = ['int64typedef.patch']
+
+moduleclass = 'bio'
