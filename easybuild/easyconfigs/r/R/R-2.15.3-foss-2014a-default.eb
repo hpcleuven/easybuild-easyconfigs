@@ -14,10 +14,12 @@ preconfigopts = 'BLAS_LIBS="$LIBBLAS" LAPACK_LIBS="$LIBLAPACK"'
 configopts = "--with-lapack --with-blas --with-pic --enable-threads --with-x=no --enable-R-shlib"
 
 dependencies = [
-    ('libreadline', '6.2'),
+    ('libreadline', '6.3'),
     ('ncurses', '5.9'),
     ('libpng', '1.6.8'),  # for plotting in R
     ('Java', '1.7.0_51', '', True),  # Java bindings are built if Java is found, might as well provide it
+    ('Tcl', '8.5.15'),
+    ('Tk', '8.5.15'),
 ]
 
 exts_list = []  # just to make it explicit this module doesn't include any extensions
