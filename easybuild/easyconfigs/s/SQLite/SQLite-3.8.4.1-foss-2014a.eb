@@ -1,0 +1,25 @@
+name = 'SQLite'
+version = '3.8.4.1'
+
+homepage = 'http://www.hwaci.com/sw/sqlite/'
+description = "SQLite: SQL Database Engine in a C Library"
+
+# eg. http://www.hwaci.com/sw/sqlite/2013/sqlite-autoconf-3071700.tar.gz
+source_urls = ['http://www.hwaci.com/sw/sqlite/2013']
+vs = version.split('.')
+# very weird way to calculate your filename
+sources = ['sqlite-autoconf-%s.tar.gz' % version.replace('.', '0')]
+
+toolchain = {'name': 'foss', 'version': '2014a'}
+
+dependencies = [
+    ('libreadline', '6.3'),
+    ('Tcl', '8.6.1'),
+]
+
+sanity_check_paths = {
+    'files': ['bin/sqlite3'],
+    'dirs': [],
+}
+
+moduleclass = 'devel'
