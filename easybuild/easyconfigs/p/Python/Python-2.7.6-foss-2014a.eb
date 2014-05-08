@@ -17,7 +17,8 @@ sources = ['%(name)s-%(version)s.tgz']
 dependencies = [
     ('bzip2', '1.0.6'),
     ('zlib', '1.2.8'),
-    ('libreadline', '6.2'),
+    ('libreadline', '6.3'),
+    ('SQLite', '3.8.4.1'),
     ('ncurses', '5.9'),
 ]
 
