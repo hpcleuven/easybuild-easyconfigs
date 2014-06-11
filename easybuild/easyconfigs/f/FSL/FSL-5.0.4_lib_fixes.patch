@@ -1,0 +1,38 @@
+diff -ru fsl.orig/config/common/vars.mk fsl/config/common/vars.mk
+--- fsl.orig/config/common/vars.mk  2007-07-13 13:00:20.000000000 +0200
++++ fsl/config/common/vars.mk       2012-08-02 14:45:57.734749873 +0200
+@@ -19,7 +19,7 @@
+ 
+ PROJNAME =
+ 
+-USRLDFLAGS =
++USRLDFLAGS = -L${EBROOTEXPAT}/lib/
+ USRINCFLAGS = 
+ USRCFLAGS = 
+ USRCXXFLAGS =
+
+diff -ru fsl.orig/src/fslsurface/Makefile fsl/src/fslsurface/Makefile
+--- fsl.orig/src/fslsurface/Makefile	2014-06-11 11:33:01.864306000 +0200
++++ fsl/src/fslsurface/Makefile	2014-06-11 11:33:34.136921000 +0200
+@@ -27,7 +27,7 @@
+ 
+ USRINCFLAGS = -I${INC_NEWMAT} -I${INC_PROB} -I${INC_ZLIB} -I${FSLDIR}/include/niftiio 
+ 
+-USRLDFLAGS = -L${LIB_NEWMAT}  -L${INC_PROB} -L${LIB_ZLIB} -L./ 
++USRLDFLAGS =  -L${EBROOTEXPAT}/lib/ -L${EBROOTMESA}/lib/ -L${LIB_NEWMAT}  -L${INC_PROB} -L${LIB_ZLIB} -L./ 
+ 
+ 
+ LIBS=-lgiftiio -lexpat -lfirst_lib -lmeshclass
+
+diff -ru fsl.orig/src/ptx2/Makefile fsl/src/ptx2/Makefile
+--- fsl.orig/src/ptx2/Makefile    2014-06-11 11:33:01.864306000 +0200
++++ fsl/src/ptx2/Makefile 2014-06-11 11:33:34.136921000 +0200
+@@ -14,7 +14,7 @@
+ 
+ 
+ USRINCFLAGS = -I${INC_NEWMAT} -I${INC_NEWRAN} -I${INC_CPROB} -I${INC_PROB} -I${INC_BOOST} -I${INC_ZLIB}
+-USRLDFLAGS = -L${LIB_NEWMAT} -L${LIB_NEWRAN} -L${LIB_CPROB} -L${LIB_PROB} -L${LIB_ZLIB}
++USRLDFLAGS =  -L${EBROOTEXPAT}/lib/ -L${LIB_NEWMAT} -L${LIB_NEWRAN} -L${LIB_CPROB} -L${LIB_PROB} -L${LIB_ZLIB}
+ 
+ DLIBS = -lwarpfns -lbasisfield -lfslsurface  -lfslvtkio -lmeshclass -lnewimage -lutils -lmiscmaths -lnewmat -lnewran -lfslio -lgiftiio -lexpat -lfirst_lib -lniftiio -lznz -lcprob -lutils -lprob -lm -lz
+ 
