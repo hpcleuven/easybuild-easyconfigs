@@ -1,0 +1,23 @@
+name = 'OpenBUGS'
+version = '3.2.3'
+
+homepage = 'http://www.openbugs.net/'
+description = """BUGS is a software package for performing Bayesian inference Using Gibbs Sampling. The user specifies a statistical model, of (almost) arbitrary complexity, by simply stating the relationships between related variables. The software includes an ‘expert system’, which determines an appropriate MCMC (Markov chain Monte Carlo) scheme (based on the Gibbs sampler) for analysing the specified model. The user then controls the execution of the scheme and is free to choose from a wide range of output types."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+toolchainopts = {'optarch': True, 'pic': True}
+
+sources = ['%(name)s-%(version)s.tar.gz']
+
+patches = []
+
+dependencies = []
+
+# The sanity test MUST be tuned before going production and submitting your contribution to upstream git repositories
+sanity_check_paths = {
+    'files': [],
+    'dirs': ["."]
+}
+
+# You SHOULD change the following line; Kindly consult other easyconfigs for possible options
+moduleclass = 'math'
