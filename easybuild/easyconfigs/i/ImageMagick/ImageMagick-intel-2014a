@@ -1,0 +1,20 @@
+name = 'ImageMagick'
+version = '6.8.9-4'
+
+homepage = 'http://www.imagemagick.org'
+description = """ImageMagick is a software suite to create, edit, compose, or convert bitmap images.It can read and write images in a variety of formats (over 100) including DPX, EXR, GIF, JPEG, JPEG-2000, PDF, PNG, Postscript, SVG, and TIFF.""" 
+
+toolchain = {'name': 'intel', 'version': '2014a'}
+toolchainopts = {'optarch': True}
+
+#http://www.imagemagick.org/download/ImageMagick.tar.gz
+sources = [SOURCE_TAR_GZ]
+source_urls = ['http://www.imagemagick.org/download/']
+
+dependencies = [
+    ('bzip2', '1.0.6'),
+    ('FFTW', '3.3.3'),
+]
+
+
+moduleclass = 'vis'
