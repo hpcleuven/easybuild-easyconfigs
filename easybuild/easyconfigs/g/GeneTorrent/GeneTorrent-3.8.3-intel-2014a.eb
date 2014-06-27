@@ -1,0 +1,23 @@
+name = 'GeneTorrent'
+version = '3.8.3'
+
+homepage = 'https://cghub.ucsc.edu/software/downloads.html'
+description = """CGHub (Cancer Genome Hub) client software for uploads and downloads to the repository"""
+
+toolchain = {'name': 'intel', 'version': '2014a'}
+
+source_urls = [
+    'https://cghub.ucsc.edu/software/downloads/GeneTorrent/%s/src/' % version,
+]
+
+sources = [SOURCE_TAR_GZ]
+
+configopts = '--with-xerces=$EBROOTXERCESMINC --with-boost=$EBROOTBOOST --with-libcurl=$EBROOTCURL --with-xqilla=$EBROOTXQILLA'
+
+dependencies = [
+    ('Boost','1.55.0'),
+    ('Xerces-C', '3.1.1'),
+    ('XQilla', '2.3.0'),
+]
+
+moduleclass = 'lib'
