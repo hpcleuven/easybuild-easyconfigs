@@ -1,0 +1,24 @@
+easyblock = "PackedBinary"
+name = 'Meld'
+version = '1.8.5'
+
+homepage = 'http://meldmerge.org/'
+description = """Meld is a visual diff and merge tool targeted at developers. 
+  Meld helps you compare files, directories, and version controlled projects. 
+  It provides two- and three-way comparison of both files and directories, 
+  and has support for many popular version control systems."""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+# eg. http://ftp.gnome.org/pub/GNOME/sources/meld/1.8/meld-1.8.5.tar.xz
+source_urls = ['http://ftp.gnome.org/pub/GNOME/sources/meld/%(version_major_minor)s/']
+
+sources = ['%(namelower)s-%(version)s.tar.xz']
+
+sanity_check_paths = {
+    'files': ["bin/meld"],
+    'dirs': []
+}
+
+
+moduleclass = 'tools'
