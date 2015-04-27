@@ -1,0 +1,49 @@
+name = 'R'
+version = '3.1.2'
+versionsuffix = '-x11'  # default, only recommended packages included
+
+homepage = 'http://www.r-project.org/'
+description = """R is a free software environment for statistical computing and graphics."""
+
+toolchain = {'name': 'foss', 'version': '2015a'}
+
+sources = [SOURCE_TAR_GZ]
+source_urls = ['http://cran.us.r-project.org/src/base/R-%(version_major)s']
+
+preconfigopts =  'BLAS_LIBS="$LIBBLAS" LAPACK_LIBS="$LIBLAPACK" '
+preconfigopts += ' x_LIBS=/usr/lib CFLAGS=-Iusr/include/X11 '
+
+configopts =  ' --with-lapack --with-blas '
+configopts += ' --with-pic --enable-threads --with-x=yes --with-X11=yes '
+configopts += ' --with-png=yes --enable-R-shlib '
+configopts += ' --x-includes=/usr/include/X11 --x-libraries=/usr/lib'
+configopts += ' --with-tcltk=yes '
+configopts += ' --with-tcl-config="${EBROOTTCL}/lib/tclConfig.sh" '
+configopts += ' --with-tk-config="${EBROOTTK}/lib/tkConfig.sh" '
+
+dependencies = [
+    ('libreadline', '6.3'),
+    ('ncurses', '5.9'),
+    ('libXt', '1.1.4'),
+    ('libXaw', '1.0.12'),
+    ('libpng', '1.6.16'),  # for plotting in R
+    ('Java', '1.8.0_31', '', True),  # Java bindings are built if Java is found, might as well provide it
+    ('Tcl','8.6.3'),
+    ('Tk','8.6.3'),
+    ('zlib', '1.2.8'),
+
+]
+
+exts_list = []  # just to make it explicit this module doesn't include any extensions
+
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in ['R', 'Rscript']] +
+             ['lib64/R/include/%s' % x for x in ['Rconfig.h', 'Rdefines.h', 'Rembedded.h',
+                                                 'R.h', 'Rinterface.h', 'Rinternals.h',
+                                                 'Rmath.h', 'Rversion.h', 'S.h']] +
+             ['lib64/R/modules/%s' % x for x in ['internet.so', 'lapack.so', 'vfonts.so']] +
+             ['lib64/R/lib/libR.so'],
+    'dirs': []
+}
+
+moduleclass = 'lang'
