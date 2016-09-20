@@ -29,7 +29,7 @@ dependencies = [
     ('SCOTCH', '6.0.4'),
     ('Mesquite', '2.3.0'),
     ('ParMGridGen', '1.0'),
-    #('Python', '2.7.11'),
+    ('Python', '2.7.11'),
     # Libccmio v2.6.1, zoltan v3.5
 ]
 
@@ -43,6 +43,6 @@ builddependencies = [
 prebuildopts = "(wcleanAll || echo 'all is fine') && "  # clean up everything first (and ignore any errors)
 
 # too many builds in parallel actually slows down the build
-#maxparallel = 4
+maxparallel = 4
 
 moduleclass = 'cae'
